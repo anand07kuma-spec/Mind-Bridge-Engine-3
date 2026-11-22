@@ -1,0 +1,7 @@
+-r requirements.txt
+
+pytest>=8.3,<10.0
+# Starlette 1.x TestClient prefers httpx2 and deprecates the httpx fallback.
+httpx2>=2.0,<3.0
+ruff>=0.8,<1.0
+mypy>=1.13,<3.0

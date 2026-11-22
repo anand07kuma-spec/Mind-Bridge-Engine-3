@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "scene_id": "bus-tracking-demo",
+  "type": "diagram",
+  "title": "Live Bus Tracking System",
+  "description": "Three buses stream GPS coordinates to the central server, which pushes live locations to the passenger app.",
+  "options": {
+    "direction": "LR",
+    "show_edge_labels": true
+  },
+  "nodes": [
+    {
+      "id": "bus-1",
+      "label": "Bus 101",
+      "kind": "bus",
+      "group": "fleet"
+    },
+    {
+      "id": "bus-2",
+      "label": "Bus 102",
+      "kind": "bus",
+      "group": "fleet"
+    },
+    {
+      "id": "bus-3",
+      "label": "Bus 103",
+      "kind": "bus",
+      "group": "fleet"
+    },
+    {
+      "id": "gps-server",
+      "label": "GPS Server",
+      "kind": "server",
+      "metadata": {
+        "role": "central-hub",
+        "protocol": "HTTPS"
+      }
+    },
+    {
+      "id": "passenger",
+      "label": "Passenger App",
+      "kind": "passenger"
+    }
+  ],
+  "edges": [
+    {
+      "id": "bus1-gps",
+      "source": "bus-1",
+      "target": "gps-server",
+      "label": "GPS ping"
+    },
+    {
+      "id": "bus2-gps",
+      "source": "bus-2",
+      "target": "gps-server",
+      "label": "GPS ping"
+    },
+    {
+      "id": "bus3-gps",
+      "source": "bus-3",
+      "target": "gps-server",
+      "label": "GPS ping"
+    },
+    {
+      "id": "gps-passenger",
+      "source": "gps-server",
+      "target": "passenger",
+      "label": "Live location"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+backend/.venv/
+.pytest_cache/
+
+# Runtime data (SQLite scene store)
+data/*.db
+data/*.db-wal
+data/*.db-shm
+
+# Generated assets (served by the API; not source)
+assets/svg/*.svg
+assets/images/*
+assets/thumbnails/*
+!assets/svg/.gitkeep
+!assets/images/.gitkeep
+!assets/thumbnails/.gitkeep
+
+# Node / Vite
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+*.local
+
+# Environment overrides
+.env
+.env.*
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+!.env.example
